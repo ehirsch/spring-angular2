@@ -1,0 +1,14 @@
+<div ng-show="error" >Error during login. Check your credentials.</div>
+<form role="form" ng-submit="login()">
+    <div layout layout-sm="column">
+        <md-input-container flex>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" ng-model="credentials.username" />
+        </md-input-container>
+        <md-input-container flex>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" ng-model="credentials.password" />
+        </md-input-container>
+    </div>
+    <md-button class="md-accent" type="submit">Submit</md-button>
+</form>

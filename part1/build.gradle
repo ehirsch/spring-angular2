@@ -1,0 +1,5 @@
+
+jar {
+    baseName = 'spring-angular2-part1'
+    version = "${version}"
+}

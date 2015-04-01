@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <title>Hello AngularJS</title>
+    <!-- Angulars Material CSS now available via Google CDN; version 0.8 used here -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
+    <style type="text/css">
+        [ng\:cloak], [ng-cloak], .ng-cloak {
+            display: none !important;
+        }
+
+        h3 {
+            padding: 0 5px;
+        }
+
+        .view-container {
+            max-width: 864px;
+            margin: auto;
+        }
+    </style>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+</head>
+<body ng-app="hello" ngCloak class="ng-cloak" layout="column">
+<div ng-controller="navigation" layout="row" flex>
+    <md-sidenav md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" class="md-sidenav-left md-whiteframe-z1" >
+        <md-toolbar>
+            <h3>Spring Boot &amp; Angular2</h3>
+        </md-toolbar>
+        <md-content>
+            <md-list>
+                <md-item>
+                    <md-item-content>
+                        <md-button href="#/" class="md-primary"> Home </md-button>
+                    </md-item-content>
+                </md-item>
+                <md-item ng-show="!authenticated">
+                    <md-item-content>
+                        <md-button href="#/login" class="md-primary"> Login </md-button>
+                    </md-item-content>
+                </md-item>
+                <md-item ng-show="authenticated">
+                    <md-item-content>
+                        <md-button ng-click="logout()" class="md-warn"> Logout </md-button>
+                    </md-item-content>
+                </md-item>
+            </md-list>
+        </md-content>
+    </md-sidenav>
+    <div layout="column" flex>
+        <md-toolbar layout="row" layout-align="center center">
+            <h3>Part II</h3>
+        </md-toolbar>
+        <md-content flex class="md-padding">
+            <div ng-view class="view-container"></div>
+        </md-content>
+    </div>
+</div>
+<!-- Angular Material Dependencies -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-aria.min.js"></script>
+<!-- Angular Material Javascript now available via Google CDN; version 0.8 used here -->
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
+<!-- Angular new Router -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-route.min.js"></script>
+
+<!-- our app -->
+<script src="js/hello.js"></script>
+</body>
+</html>

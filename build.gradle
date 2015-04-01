@@ -1,0 +1,52 @@
+buildscript {
+  ext {
+    springBootVersion = '1.2.2.RELEASE'
+    springLoadedVersion = '1.2.0.RELEASE'
+  }
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    classpath("org.springframework:springloaded:${springLoadedVersion}")
+    classpath("io.spring.gradle:dependency-management-plugin:0.4.1.RELEASE")
+  }
+}
+
+allprojects {
+  version = '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+  apply plugin: 'java'
+  apply plugin: 'idea'
+  apply plugin: 'spring-boot'
+  apply plugin: 'io.spring.dependency-management'
+
+  dependencies {
+    compile("org.springframework.boot:spring-boot-starter-security")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+  }
+
+  sourceCompatibility = 1.7
+  targetCompatibility = 1.7
+
+  repositories {
+    mavenCentral()
+  }
+
+  idea {
+    module {
+      inheritOutputDirs = false
+      outputDir = file("$buildDir/classes/main/")
+    }
+  }
+
+}
+
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.3'
+}
+
