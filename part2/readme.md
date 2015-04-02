@@ -9,8 +9,5 @@
 	- layout & layout-align
 	- md-content
 - Single class per controller
-
-## and
-
-- use of newRouter instead of ngRouter
+- use of newRouter instead of ngRouter (todo)
 - material sideNavBar
